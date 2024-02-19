@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import * as React from "react";
 
+const welcome={
+  title: "React",
+  subTitle: "Vite",
+  greetings: "Bonjour"
+};
+
+const name={
+  nom:"Znaidi",
+  prenom:"Ahmed"
+};
+
+function date(day){
+  return day;
+}
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
+  
+  return(
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h5>Aujourd'hui est un {date("Lundi")}</h5>
+      <h1>Hello From {welcome.title} and {welcome.subTitle}.</h1>
+      <p>{welcome.greetings} {name.nom+" "+name.prenom}</p>
+      <label htmlFor="search">Search:</label>
+      <input id="search" type="text"/>
+      <ul>
+        <li>FrontEnd</li>
+        <li>React + Vite</li>
+        <li>javascript + html</li>
+      </ul> 
     </>
-  )
+
+  );
 }
 
-export default App
+export default App;
